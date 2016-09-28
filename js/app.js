@@ -6,9 +6,9 @@ var mapa = new Array();
 
 
 function getTemplate2(id, title, cover, event,isNew,comen){
-  var template  = '<li ><div class="targeta"><div class="w3-card-12"  style="background-color: #fdfbee;position:relative;">'
+  var template  = '<li><div class="targeta"><div class="w3-card-12"  style="background-color: #fdfbee;position:relative;">'
   template     += '<div style="top:4px; right:22px; position:absolute;"><img src=images/comments.png></div>'
-  template     += '<div style="top:1px; right:4px; position:absolute;"><p style="color:white">'+String(comen)+'</p></div>'
+  template     += '<div style=" bottom:194px; right:2px; position:absolute;"><p style="color:white;">'+comen+'</p></div>'
   if(isNew == 1){
      //template     +='<div class="box" style="border:1px solid #40ff02; position:absolute; width:100%;height:1px;"> </div>'
     template += '<div class="ribbon"><span>New</span></div>'
@@ -99,6 +99,9 @@ listenQuery(function (result, requestId, error){
   tab_list(result, function(err, id, title, data){
     var url=imageBlobURLFromBase64(data)
     var urlCover = "\""+url+"\""
+    if(title == "My Content"){
+      urlCover = "images/mycontent.jpg"
+    }
     var template = getTemplate4(id, title, urlCover, 'channel_list')
      $('#demo').append(template)
    
@@ -119,6 +122,18 @@ function channel_list(id){
     pintaChannelList(result, function(err, id,title,data){
       var url=imageBlobURLFromBase64(data)
       var urlCover = "\""+url+"\""
+      if(title == "My Channel"){
+        urlCover = "images/mychannel.png"
+      }
+      if(title == "Ofertas Clientes"){
+        urlCover = "images/ofertas.png"
+      }
+      if(title == "Mis Notas"){
+        urlCover = "images/notas.png"
+      }
+      if(title == "Presentaciones Clientes"){
+        urlCover = "images/presentaciones.png"
+      }
       var template = getTemplate3(id, title, urlCover,'story_list')
       $('#channels').append(template)
 
@@ -230,7 +245,7 @@ function pintaStoryList(data, callback, _id){
 
   var title = file.title
   var isNew = file.isUnread
-  var comen = file.comments.length
+  var comen = String(file.comments.length)
   listenQuery(function(result, resultId, err){
 
 
