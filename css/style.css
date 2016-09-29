@@ -110,23 +110,39 @@ background-size: cover;
 }
 .file_section{
   height: 300px;
-  background-color: #116388;
+  background-color: #8CBCB9;
+
+}
+.file_channel{
+  padding: 10px;
+  height: 320px;
+  margin-top: 0px;
+  background-color: #C5CBD3 ;
+}
+.file_story{
+  padding: 10px;
+  height: 300px;
+  background-color: #DDA448;
+}
+/*.file_section{
+  height: 300px;
+  background-color: #104363;
   
 }
 .file_channel{
   padding: 10px;
   height: 320px;
   margin-top: 0px;
-  background-color: #02bdd0;
+  background-color: lightblue;
 }
 .file_story{
   padding: 10px;
   height: 300px;
-  background-color: lightblue;
-}
+  background-color: #F2C34D;
+}*/
 .cabecera{
-background-color: blue;
-padding: 4px;
+background-color:#f1f1f1;
+padding: 10px;
 }
 .category {
   font-family:  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
